@@ -174,9 +174,11 @@ export class DataSource extends DataSourceWithBackend<
   }
 }
 
-const replace = (scopedVars?: ScopedVars, range?: TimeRange) => (str: string,): string => {
-  return replaceMacros(getTemplateSrv().replace(str, scopedVars), range)
-}
+const replace =
+  (scopedVars?: ScopedVars, range?: TimeRange) =>
+  (str: string): string => {
+    return replaceMacros(getTemplateSrv().replace(str, scopedVars), range)
+  }
 
 // replaceMacros substitutes all available macros with their current value.
 export const replaceMacros = (str: string, range?: TimeRange) => {
