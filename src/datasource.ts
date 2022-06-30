@@ -110,7 +110,9 @@ export class DataSource extends DataSourceWithBackend<
       .find(f => f.name === 'data')
       ?.values.map((v: string) => {
         try {
-          return JSON.parse(v)
+          return JSON.parse(
+            Buffer.from(JSON.parse(v).payload, 'base64').toString(),
+          )
         } catch (e) {
           throw new Error(`Invalid JSON: ${v}. Error: ${e}`)
         }
@@ -172,9 +174,7 @@ export class DataSource extends DataSourceWithBackend<
   }
 }
 
-const replace = (scopedVars?: ScopedVars, range?: TimeRange) => (
-  str: string,
-): string => {
+const replace = (scopedVars?: ScopedVars, range?: TimeRange) => (str: string,): string => {
   return replaceMacros(getTemplateSrv().replace(str, scopedVars), range)
 }
 

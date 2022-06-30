@@ -8,10 +8,10 @@
   "streaming": true,
   "executable": "gpx_websocket",
   "info": {
-    "description": "A data source plugin for handling WebSocket connections on Grafana.",
+    "description": "A data source plugin for handling Pulsar WebSocket connections on Grafana.  Extended from golioth",
     "author": {
-      "name": "Golioth",
-      "url": "https://golioth.io"
+      "name": "Warren Schilpzand",
+      "url": ""
     },
     "keywords": ["websocket", "live", "stream", "api", "datasource"],
     "logos": {
@@ -21,11 +21,11 @@
     "links": [
       {
         "name": "Website",
-        "url": "https://github.com/golioth/grafana-websocket-plugin"
+        "url": "https://github.com/wschilpz/grafana-websocket-base64-plugin"
       },
       {
         "name": "License",
-        "url": "https://github.com/golioth/grafana-websocket-plugin/blob/main/LICENSE"
+        "url": "https://github.com/wschilpz/grafana-websocket-base64-plugin"
       }
     ],
     "screenshots": [
